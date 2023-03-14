@@ -1,11 +1,11 @@
 #lang racket
 
-;;;; Michael Wright
-;;;; mswvgc@umsystem.edu
-;;;; 03/10/2023
-;;;; CS490 Program 1
+;;;;; Michael Wright
+;;;;; mswvgc@umsystem.edu
+;;;;; 03/10/2023
+;;;; ;CS 490 FP Program 1
 
-;; Reads a file and return a list of lists representing the file contents.
+;;; Reads a file and return a list of lists representing the file contents.
 (define (process-file file-path)
   
   ;; Reads the contents of a file and stores it into a string
@@ -24,8 +24,8 @@
   result) ; Return the list of lists
 
 
-;; Sorts by last name and then first name
-;; Uses selection sort recursively 
+;;; Sorts by last name and then first name
+;;; Uses selection sort recursively 
 (define (sort-name lst)
 
   ;; Gets last name
@@ -59,8 +59,8 @@
           (append (filter (lambda (x) (string-ci=? (sortname x) m)) lst)
                   (sort-name (filter (lambda (x) (string-ci<? m (sortname x))) lst))))))
 
-;; Computes average exam and quiz scores
-;; Floating point values
+;;; Computes average exam and quiz scores
+;;; Floating point values
 (define (compute-avgs lst)
   
   (define (avg-scores lst)
@@ -86,7 +86,7 @@
         
           (list first-name last-name quiz-avg exam-avg))))
 
-;; Computes final grade and letter grade
+;;; Computes final grade and letter grade
 (define (compute-final-grade-with-letter lst)
 
   ;; Assign letter grade based on score
@@ -110,7 +110,7 @@
         
           (list first-name last-name final-grade letter-grade))))
 
-;; Formats list for output
+;;; Formats list for output
 (define (prep-for-file lst)
   (define (iter lst so-far)
     (if (empty? lst)
@@ -122,6 +122,9 @@
           (iter (rest lst) (string-append so-far outline)))))
   (iter lst ""))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Replace with proper file path;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Read student data from input file
 (define starting-list (process-file "/home/mw/Downloads/GradebookData.txt")) 
 
