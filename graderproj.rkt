@@ -3,7 +3,7 @@
 ;;;;; Michael Wright
 ;;;;; mswvgc@umsystem.edu
 ;;;;; 03/10/2023
-;;;; ;CS 490 FP Program 1
+;;;;; CS 490 FP Program 1
 
 ;;; Reads a file and return a list of lists representing the file contents.
 (define (process-file file-path)
